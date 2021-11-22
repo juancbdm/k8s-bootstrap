@@ -35,3 +35,7 @@ sudo systemctl restart docker
 sudo apt-get install -y kubelet kubectl kubeadm
 sudo apt-mark hold kubelet kubeadm kubectl
 
+# Fix network error. refer: https://stackoverflow.com/questions/42338519/can-not-access-cluster-ip-with-same-node
+sudo sysctl -w net.bridge.bridge-nf-call-iptables=1
+sudo sysctl -w net.bridge.bridge-nf-call-ip6tables=1
+
